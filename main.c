@@ -38,14 +38,14 @@ int main(){
     /** Communicate "n" and "iter" */
     printf("\n\n\nStarting number:\t%hu\nNumber of Iterations:\t%hu\n\n\n",n,iter);
 
-    char attuale;               //Current verified char
-    unsigned int contatore=1;   //Times the current char repeats.. always at least 1
+    char current;               //Current verified char
+    unsigned int counter=1;     //Times the current char repeats.. always at least 1
     unsigned int s_len=1;       //Length of string to print.. always at least 1
     unsigned int old_len=1;     //Length of old string (1st iteration is equal to 1)
     unsigned int i=0;           //Counter of current char
 
     char s[STRING_LENGTH];        //Old string-line above
-    char coppia[3];               //Couple of numbers to concatenate
+    char concat[3];               //Couple of numbers to concatenate
     char new[STRING_LENGTH]="";   //String to print
     
     snprintf(s, 120, "%hu", n); //Inserts "n" to s[0]
@@ -55,16 +55,16 @@ int main(){
     for(unsigned int k=1;k<iter;k++){
         //check each char of the line above
         do{
-            attuale=s[i];   //Sets current char to verify
+            current=s[i];   //Sets current char to verify
             //Check if current char repeats at least once
-            while(attuale==s[i+contatore]){
-                contatore++;    //Increase counter of current char repeatition
+            while(current==s[i+counter]){
+                counter++;      //Increase counter of current char repeatition
                 s_len++;        //Increase the length of the string to print
             }
-            sprintf(coppia,"%u%c",contatore,attuale);   //Insert in couple string the repetitions and the char
-            strcat(new,coppia);     //Append couple string to string to print
-            i+=contatore;       //Increases "i" until next different char
-            contatore=1;    //Reset counter of current char repeatition
+            sprintf(concat,"%u%c",counter,current);     //Insert in couple string the repetitions and the char
+            strcat(new,concat);                         //Append couple string to string to print
+            i+=counter;                                 //Increases "i" until next different char
+            counter=1;                                  //Reset counter of current char repeatition
         }while(i<old_len);
 
         //Print string
@@ -72,7 +72,7 @@ int main(){
         printf("\n");
 
         strcpy(s,new);                      //Copies new string to old one
-        memset(coppia,0,sizeof(coppia));    //Clears couple string
+        memset(concat,0,sizeof(concat));    //Clears couple string
         old_len=strlen(new);                //Sets length of old string
         memset(new,0,sizeof(new));          //Clears new string
         i=0;                                //Resets counter to char to verify
