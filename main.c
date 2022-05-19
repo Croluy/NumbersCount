@@ -4,10 +4,10 @@
 #include <string.h>
 
 #define MIN_NUMBER 0
-#define MAX_NUMBER 100
+#define MAX_NUMBER 9999
 #define MIN_ITER 1
 #define MAX_ITER 100
-#define STRING_LENGTH 10000
+#define STRING_LENGTH 100000
 
 int main(){
     unsigned short int n;       //1st number of the algorithm
