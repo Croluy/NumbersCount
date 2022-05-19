@@ -38,19 +38,21 @@ int main(){
     /** Communicate "n" and "iter" */
     printf("\n\n\nStarting number:\t%hu\nNumber of Iterations:\t%hu\n\n\n",n,iter);
 
-    char current;               //Current verified char
-    unsigned int counter=1;     //Times the current char repeats.. always at least 1
-    unsigned int s_len=1;       //Length of string to print.. always at least 1
-    unsigned int old_len=1;     //Length of old string (1st iteration is equal to 1)
-    unsigned int i=0;           //Counter of current char
+    char current;                       //Current verified char
+    unsigned int counter=1;             //Times the current char repeats.. always at least 1
+    unsigned int s_len=1;               //Length of string to print.. always at least 1
+    char buf[64];
+    sprintf(buf,"%hu",n);               //Inserts "n" into buffer in order to get number's length
+    unsigned int old_len=strlen(buf);   //Length of old string (1st iteration is equal to numer of char of "n")
+    unsigned int i=0;                   //Counter of current char
 
     char s[STRING_LENGTH];        //Old string-line above
     char concat[3];               //Couple of numbers to concatenate
     char new[STRING_LENGTH]="";   //String to print
     
-    snprintf(s, 120, "%hu", n); //Inserts "n" to s[0]
+    snprintf(s, 120, "%hu", n); //Inserts "n" to s
 
-    printf("\n%d\n",n);  //Print the 1st line of algorithm (which is equal to "n")
+    printf("\n%hu\n",n);  //Print the 1st line of algorithm (which is equal to "n")
 
     for(unsigned int k=1;k<iter;k++){
         //check each char of the line above
@@ -68,7 +70,7 @@ int main(){
         }while(i<old_len);
 
         //Print string
-        for(unsigned int j=0;j<strlen(new);j++) printf("%c ",new[j]);
+        for(unsigned int j=0;j<strlen(new);j++) printf("%c",new[j]);
         printf("\n");
 
         strcpy(s,new);                      //Copies new string to old one
