@@ -4,10 +4,10 @@
 #include <string.h>
 
 #define MIN_NUMBER 0
-#define MAX_NUMBER 9
+#define MAX_NUMBER 100
 #define MIN_ITER 1
-#define MAX_ITER 10
-#define STRING_LENGTH 500
+#define MAX_ITER 100
+#define STRING_LENGTH 10000
 
 int main(){
     unsigned short int n;       //1st number of the algorithm
@@ -50,7 +50,7 @@ int main(){
     
     snprintf(s, 120, "%hu", n); //Inserts "n" to s[0]
 
-    printf("\n%c\n",s[0]);  //Print the 1st line of algorithm (which is equal to "n")
+    printf("\n%d\n",n);  //Print the 1st line of algorithm (which is equal to "n")
 
     for(unsigned int k=1;k<iter;k++){
         //check each char of the line above
