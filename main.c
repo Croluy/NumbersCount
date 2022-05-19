@@ -7,6 +7,7 @@
 #define MAX_NUMBER 9
 #define MIN_ITER 1
 #define MAX_ITER 10
+#define STRING_LENGTH 500
 
 int main(){
     unsigned short int n;       //1st number of the algorithm
@@ -43,9 +44,9 @@ int main(){
     unsigned int old_len=1;     //Length of old string (1st iteration is equal to 1)
     unsigned int i=0;           //Counter of current char
 
-    char s[122];        //Old string-line above
-    char coppia[3];     //Couple of numbers to concatenate
-    char new[122]="";   //String to print
+    char s[STRING_LENGTH];        //Old string-line above
+    char coppia[3];               //Couple of numbers to concatenate
+    char new[STRING_LENGTH]="";   //String to print
     
     snprintf(s, 120, "%hu", n); //Inserts "n" to s[0]
 
