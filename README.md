@@ -8,7 +8,7 @@ What do you see in the line above?
 Your answer should be "a one" or to be more precise "one (number) one".
 
 11<br>
-Now how would you read the line above if you'd only single digits number?
+Now how would you read the line above if you'd only have to use single digits number?
 That's "two ones".
 
 21<br>
