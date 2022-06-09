@@ -40,7 +40,6 @@ int main(){
 
     char current;                       //Current verified char
     unsigned int counter=1;             //Times the current char repeats.. always at least 1
-    unsigned int s_len=1;               //Length of string to print.. always at least 1
     char buf[64];
     sprintf(buf,"%hu",n);               //Inserts "n" into buffer in order to get number's length
     unsigned int old_len=strlen(buf);   //Length of old string (1st iteration is equal to numer of char of "n")
@@ -59,10 +58,8 @@ int main(){
         do{
             current=s[i];   //Sets current char to verify
             //Check if current char repeats at least once
-            while(current==s[i+counter]){
+            while(current==s[i+counter])
                 counter++;      //Increase counter of current char repeatition
-                s_len++;        //Increase the length of the string to print
-            }
             sprintf(concat,"%u%c",counter,current);     //Insert in couple string the repetitions and the char
             strcat(new,concat);                         //Append couple string to string to print
             i+=counter;                                 //Increases "i" until next different char
